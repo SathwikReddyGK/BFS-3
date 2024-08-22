@@ -1,3 +1,18 @@
+# Solution
+
+# // Time Complexity : O() -> Assumption is n! but leetcode said n*2^n
+# // Space Complexity : O(n)
+# // Did this code successfully run on Leetcode : Yes
+# // Any problem you faced while coding this : None
+
+
+# // Your code here along with comments explaining your approach
+# Approach is to use BFS to perform level order traversal. Basically consider the string has "n" characters, in first level we can remove one
+# character at each position giving us n strings. For example ")()" can be split into "()","))",")(" strings. At this level "()" is valid, so
+# we can stop at this level. Incase there was no valid string here, then for each of these n strings, each with length of n-1, we will have
+# n-1 strings. We can keep going to lower levels until we find a level which has valid string. We can also use a dictionary to keep track
+# of all the strings created, so that we do not go to lower level on same string multiple times.
+
 def isValid(s):
         count = 0
         for c in s:
